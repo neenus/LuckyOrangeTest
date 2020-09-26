@@ -8,6 +8,32 @@
   </div>
 </template>
 
+<script>
+export default {
+  methods: {
+    loadLuckyOrange: () => {
+      console.log("lodaing lucky orange ...");
+
+      if (process.env.NODE_ENV === "production") {
+        window.__lo_site_id = 246087;
+        (function() {
+          let wa = document.createElement("script");
+          wa.type = "text/javascript";
+          wa.async = true;
+          wa.src = "https://d10lpsik1i8c69.cloudfront.net/w.js";
+          let s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(wa, s);
+        })();
+        console.log("lucky orange script loaded...");
+      }
+    }
+  },
+  beforeMount() {
+    this.loadLuckyOrange();
+  }
+};
+</script>
+
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
