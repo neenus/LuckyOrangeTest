@@ -12,20 +12,16 @@
 export default {
   methods: {
     loadLuckyOrange: () => {
-      console.log("lodaing lucky orange ...");
-
       if (process.env.NODE_ENV === "production") {
         window.__lo_site_id = 249064;
-
-        (function() {
-          var wa = document.createElement("script");
-          wa.type = "text/javascript";
-          wa.async = true;
-          wa.src = "https://d10lpsik1i8c69.cloudfront.net/w.js";
-          var s = document.getElementsByTagName("script")[0];
-          s.parentNode.insertBefore(wa, s);
-        })();
-        console.log("lucky orange script loaded...");
+        let script = document.createElement("script");
+        script.type = "text/javascript";
+        script.async = true;
+        script.setAttribute(
+          "src",
+          "https://d10lpsik1i8c69.cloudfront.net/w.js"
+        );
+        document.head.appendChild(script);
       }
     }
   },
