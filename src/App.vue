@@ -12,17 +12,17 @@
 export default {
   methods: {
     loadLuckyOrange: () => {
-      // if (process.env.NODE_ENV === "production") {
-      //   window.__lo_site_id = 249064;
-      //   let script = document.createElement("script");
-      //   script.type = "text/javascript";
-      //   script.async = true;
-      //   script.setAttribute(
-      //     "src",
-      //     "https://d10lpsik1i8c69.cloudfront.net/w.js"
-      //   );
-      //   document.head.appendChild(script);
-      // }
+      if (process.env.NODE_ENV === "production") {
+        window.__lo_site_id = 249064;
+        let script = document.createElement("script");
+        script.type = "text/javascript";
+        script.async = true;
+        script.setAttribute(
+          "src",
+          "https://d10lpsik1i8c69.cloudfront.net/w.js"
+        );
+        document.head.appendChild(script);
+      }
     }
   },
   beforeMount() {
